@@ -1,0 +1,119 @@
+---
+layout: post
+title: "CSS"
+subtitle: "CSS"
+categories: Programming
+tags: CSS
+---
+
+## **CSS(Cascading style sheets)**
+
+*->Why Cascading? That's a point!*
+
+## **CSS Basic Syntax**
+
+![HTML5PageLayout](https://led74.github.io/assets/img/post/CssBasic.png)
+
+How to apply "Style" to HTML Page
+<li> Inline </li>
+<li> Internal </li>
+<li> External (Mostly used) </li>
+
+``` css
+<link rel="stylesheet" type="text/css" href="main.css" />
+```
+
+## **How to choose p tag?**
+HTML File <br>
+``` html
+<div><p style="color:blue">Question</p></div>
+```
+<br>
+CSS File 
+``` css
+div > p {
+    border : 1px solid slategray;
+}
+```
+
+## **CSS Priority**
+*id > class > element*
+## **How to select ID, Class, Element(Tag)**
+HTML file
+``` html
+<div id="a" class="b"> 
+  text..
+</div>
+``` 
+CSS file
+``` css
+#a { 
+  color : red;
+}
+.b {
+  color : blue;
+}
+div {
+  color : green;
+}
+```
+Search Keyword : CSS specificity
+## **CSS Selector**
+Select group
+``` css
+h1, span, div {color : red}
+h1, span, div#id {color : red}
+h1.span, div.classname {color : red}
+```
+
+nth-child
+``` html
+<div id="jisu">
+  <h2> one </h2>
+  <p>2</p>
+  <p>3</p>
+  <p>4</p>
+  <p>5</p>
+</div>
+```
+
+``` css
+#jisu > p:nth-child(2) {color : red}
+```
+
+## **BOX Model**
+<li>margin</li>
+<li>border</li>
+<li>padding</li>
+
+![MarginBorderPadding](https://led74.github.io/assets/img/post/MarginBorderPadding.png)
+
+## **CSS Positioning Layout**
+![CSSPositioning](https://led74.github.io/assets/img/post/CssPosition.png)
+
+## **CSS Float Layout**
+Reference : 
+[https://internetingishard.com/html-and-css/floats/](https://internetingishard.com/html-and-css/floats/)
+
+## **CSS Flex**
+Reference : 
+[https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+## **z-index**
+Reference : 
+[https://www.w3schools.com/cssref/pr_pos_z-index.asp](https://www.w3schools.com/cssref/pr_pos_z-index.asp)
+
+## **CSS pre-processor**
+Why we use the CSS pre-processor?
+Reference : 
+[https://webkul.com/blog/advantages-using-less/](https://webkul.com/blog/advantages-using-less/)
+
+
+## **Transition, Transform**
+Reference : 
+[https://thoughtbot.com/blog/transitions-and-transforms](https://thoughtbot.com/blog/transitions-and-transforms)
+
+
+
+Reference lecture :
+[https://www.inflearn.com/course/html-css-%EA%B0%95%EC%A2%8C-codesquad#](https://www.inflearn.com/course/html-css-%EA%B0%95%EC%A2%8C-codesquad#)
