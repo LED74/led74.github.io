@@ -6,5 +6,5 @@ menu: true
 submenu: true
 order: 1
 description: >
-  Pending
+  All about the programming
 ---

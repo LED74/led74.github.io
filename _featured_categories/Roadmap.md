@@ -6,5 +6,5 @@ menu: true
 submenu: true
 order: 7
 description: >
-  Web Developer Roadmap
+  Roadmap to be a great web developer
 ---
