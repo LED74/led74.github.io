@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Javascript"
-subtitle: "Javascript"
+title: "math, string, operator, array"
+subtitle: "math, string, operator, array"
 categories: Programming
 tags: Javascript
 ---
@@ -79,43 +79,43 @@ You can find information in detail below. <br>
 **ADD**<br>
 Push() (add one data)
 ```javascript
-var li = ['a', 'b', 'c', 'd']
+var li = ['a', 'b', 'c', 'd'];
 li.push('f');
 ```
 Concat() (add multiple data)
 ```javascript
-var li = ['a', 'b', 'c', 'd']
+var li = ['a', 'b', 'c', 'd'];
 li.concat('f','g');
 ```
 
 unshift() (add to the front)
 ```javascript
-var li = ['a', 'b', 'c', 'd']
+var li = ['a', 'b', 'c', 'd'];
 li.unshift('z');
 ```
 
 splice() (select the point that you want to put)
 ```javascript
-var li = ['a', 'b', 'c', 'd']
+var li = ['a', 'b', 'c', 'd'];
 li.splice(2, 0, 'b');
 ```
 
 **DELETE**<br>
 Shift() (delete one data from the front)
 ```javascript
-var li = ['a', 'b', 'c', 'd']
+var li = ['a', 'b', 'c', 'd'];
 li.unshift();
 ```
 
 pop() (delete on date from the last)
 ```javascript
-var li = ['a', 'b', 'c', 'd']
+var li = ['a', 'b', 'c', 'd'];
 li.pop();
 ```
 
 **SORT**<br>
 ```javascript
 sort()
-var li = ['d', 'c', 'b', 'a']
+var li = ['d', 'c', 'b', 'a'];
 li.sort();
 ```
