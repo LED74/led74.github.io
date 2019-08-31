@@ -3,7 +3,7 @@ layout: post
 title: "regular expression"
 subtitle: "regular expression"
 categories: Programming
-tags: javascript
+tags: Javascript
 ---
 
 # **Javascript Basic**

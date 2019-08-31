@@ -34,20 +34,20 @@ You can find information in detail below.  <br>
 
 Expressions - String Methods <br>
 ```javascript
-\\ String Length
+// String Length
 var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var sln = txt.length;
-\\ Result : 26
+// Result : 26
 
-\\ Finding a String in a String
+// Finding a String in a String
 var str = "Please locate where 'locate' occurs!";
 var pos = str.indexOf("locate");
-\\ Result : 7
+// Result : 7
 
-\\ Slice() Method
+// Slice() Method
 var str = "Apple, Banana, Kiwi";
 var res = str.slice(7, 13);
-\\ Result : Banana
+// Result : Banana
 ```
 You can find information in detail below.  <br>
 [JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
