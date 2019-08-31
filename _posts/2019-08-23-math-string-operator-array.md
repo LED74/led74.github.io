@@ -3,7 +3,7 @@ layout: post
 title: "Javascript"
 subtitle: "Javascript"
 categories: Programming
-tags: javascript
+tags: Javascript
 ---
 # **Javascript Basic**
 
