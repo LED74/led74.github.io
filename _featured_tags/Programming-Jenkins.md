@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: AWS
-slug: AWS
+title: Jenkins
+slug: Jenkins
 category: Programming
 menu: false
 order: 7
