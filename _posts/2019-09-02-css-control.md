@@ -1,57 +1,57 @@
 ---
 layout: post
-title: "selector"
-subtitle: "selector"
+title: "css control"
+subtitle: "css control"
 categories: Programming
 tags: jQuery
 ---
 
 # **jQuery** <br>
 
-Selector
+CSS Control
 
 ```javascript
 <script>
 $(function(){
-    $("#xxx").val(); //  id
-    $(".xxx").val(); //  class
-    $("input[class=text]") // class = text1
-    $("input[name=textName1]") // name=textName1
+    //css()
+    $("div:eq(0)").css("color", "red");
+    $("div:eq(0)").css("font-weight","bold");
   });
 </script>
 <body>
-  <input type="text" name="textName1" class="text1" value="text1" /></br>
-  <input type="text" name="textName2" class="text2" value="text2" /></br>
+  <div>control style1</div>
+  <div>control style2</div>
 </body>
 ```
 
 ```javascript
+<head>
+<style type="text/css">
+  .sample1{
+    color : red;
+    font-weight : bold;
+  }
+  .sample2{
+    color : green;
+  }
+</style>
+
+</head>
 <script>
 $(function(){
-    let checkedRadio = $("input[name=rdo]:checked").val(); // name=textName1
-    console.log(checkedRadio); // print second
+    //addClass("ClassName") add className to selected selector
+    $("#sampleDiv1").addClass("sample2");
+    //removeClass("ClassName") delete className from selected selector
+    $("#sampleDiv1").removeClass("sample2");
+    //hasclass("ClassName") check whether selected selector has className (true/false)
+    let flag = $("#sampleDiv1").hasClass("sample2");
+    console.log(flag);
   });
 </script>
 <body>
-  <input type="radio" name="rdo" checked="checked" value="first" /></br>
-  <input type="radio" name="rdo" value="second" /></br> // selected
+  <div id="sampleDiv">control style1</div>
+  <div id="sampleDiv2">control style2</div>
 </body>
 ```
 
-```javascript
-<script>
-$(function(){
-    //  $("div:eq(0)") = $("div").eq(0) 
-    let class2 = $(".class2:eq(1)").html(); // eq means sequence (starts from 0)
-    console.log(class2); // print "value2"
-  });
-</script>
-<body>
-  <div class="class2">
-    <h2>value1</h2>
-  </div>
-  <div class="class2">
-    <h2>value2</h2>
-  </div>
-</body>
-```
+
