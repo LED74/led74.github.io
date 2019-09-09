@@ -32,7 +32,7 @@ function ChangeValue(){
 	TestVaule = "Local";
 }
 document.write(TestValue);
-// the answer is : Global
+// the answer is : Local
 ``` 
 
 **Function as a value** <br>
