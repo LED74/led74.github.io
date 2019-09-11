@@ -1,97 +1,60 @@
 ---
 layout: post
-title: "global object and this"
-subtitle: "global object and this"
+title: "inheritance"
+subtitle: "inheritance"
 categories: Programming
 tags: Javascript
 ---
-# **Javascript Basic**
 
-Global object is special object. all object is property of the Global object
+# **Javascript Basic**<br>
+
+How to make inheritance in JS <br>
 
 ```javascript
-function func(){
-  alert('Hello?');
+function Person(name){
+  this.name = name;
 }
-func();
-window.func();
-``` 
-
-Window api <br>
-[https://developer.mozilla.org/en-US/docs/Web/API/Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) <br>
-
-in Web browser, global object is "Window" <br>
-but in node.js, global object is "global" <br>
-
-this means context in function, it can be changeable depending on the situation. <br>
-
-1 . function and this <br>
-call function <br>
-
-func is no object so it is belong to Window object so this is Window.
-```javascript
-function func(){
-  if(window === this){ // Window === this
-    document.write("window === this");
-  }
+Person.prototype.name = null;
+Person.prototype.introduce = function(){
+  return 'My name is ' +this.name;
 }
-func();
+function Programmer (name){
+  this.name = name;
+}
+// here, inheritance happened !!!!
+Programmer.prototype = new Person();
+
+var p1 = new Programmer('euido');
+document.write(p1.introduce()+"<br />");
 ```
 
-2 . method and this <br>
-
-func is belong to object o, o belong to object Window. so this is object o. <br>
+Add new function after inheritance of object.
 ```javascript
-var o = {
-  func : function() {
-    if(o === this){ // o === this
-      document.write("o === this");
-    }
-  }
+function Person(name){
+  this.name = name;
 }
+Person.prototype.name = null;
+Person.prototype.introduce = function{
+  return 'My nickname is '+this.name;
+}
+function Programmer(name){
+  this.name = name;
+}
+Programmer.prototype = new Person();
+Programmer.prototype.coding = function(){
+  return "hello world";
+}
+function Designer(name){
+  this.name = name;
+}
+Designer.prototype.design = function(){
+  return "design";
+}
+var p1 = new Programmer('euido');
+document.write(p1.introduce()+"<br />");
+document.write(p1.coding()+"<br />");
+
+var p2 = new Programmer('test');
+document.write(p2.introduce()+"<br />");
+document.write(p2.design()+"<br />"); 
 ```
-
-3 . constructor and this<br>
-
-```javascript
-var funcThis = null;
-
-function Func(){
-  funcThis = this;
-}
-// funcThis === null
-var o1 = Func();  // call function
-// funcThis === object Window
-if(funcThis === window) {
-  document.write('window </br>');
-}
-var o2 = new Func(); // call constructor
-// funcThis === Object o2
-if(funcThis === o2) {
-  document.write('o2 </br>');
-}
-```
-
-4 . apply and this
-
-```javascript
-var o = {}
-var p = {}
-function func(){
-  switch(this){
-    case o:
-      document.write('b<br />');
-      break;
-    case p:
-      document.write('p<br />');
-      break;
-    case window:
-      document.write('window<br />');
-      break;
-  }
-}
-func(); // Window
-func.apply(o); // o
-func.apply(p); // p
-```
-
