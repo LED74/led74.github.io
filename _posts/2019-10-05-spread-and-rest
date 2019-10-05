@@ -1,0 +1,128 @@
+---
+layout: post
+title: "Spread and Rest"
+subtitle: "Spread and Rest"
+categories: Programming
+tags: Javascript
+---
+# **Javascript ES6,ES7,ES8** <br>
+
+**Spread**<br>
+
+example 1. <br>
+```javascript
+const friends = [1,2,3,4];
+
+console.log(friends);
+//result : [1,2,3,4]
+
+console.log(...friends); 
+//result : 1 2 3 4
+```
+
+example 2. <br>
+```javascript
+const friends = [1,2,3,4];
+const family = ["a","b","c"];
+
+
+console.log(friends+family);
+//result : 1,2,3,4a,b,c
+
+console.log([friends+family]);
+//result : [Array(4), Array(3)]
+
+console.log([...friends, ...family]);
+//result : [1,2,3,4,"a","b","c"]
+```
+
+example 3.
+```javascript
+const object1 = {
+  name : "Euido"
+  age : 83
+};
+
+const object2 = {
+  value1 : "Hi"
+  value2 : "Hello"
+};
+
+console.log({...object1, ...object2});
+//result : ["Euido", 83, "Hi", "Hello"]
+```
+
+```javascript
+const friends = ["Euido", "Josh"];
+//and I want to add one friend.
+
+const newFriends = [...friends, "Jack"];
+//add one data in the arry.
+
+console.log(newFriends);
+//result : ["Euido", "Josh", "Jack"]
+
+//it also can be used in Object
+```
+
+
+**Rest**
+
+```javascript
+const bestFriendMaker = (firstOne, ...rest) => {
+  console.log(`My best friend is ${firstOne}`);
+  console.log(rest);
+};
+// here you can select first value with {firstOne}
+// and rest values will be rest array.
+
+bestFriendMaker("Euido", "Simon", "Suzi", "Jan");
+```
+
+
+**Rest + Spread + Destructure**<br>
+
+case1(remove).
+```javascript
+const user = {
+  name: "Euido",
+  age: 13,
+  password: hireme
+};
+
+//before
+user["password"] = null;
+
+//after
+const killPassword = ({password, ...rest}) => rest;
+const cleanUser = killPassword(user);
+
+console.log(user);
+```
+
+case2(combine).
+```javascript
+const user = {
+  name: "Euido",
+  age: 13,
+  password: hireme
+};
+
+const setCountry = ({country = "KR", ...rest}) => ({country, ...rest})
+
+console.log(setCountry(user));
+```
+
+case3(rename).
+```javascript
+const user = {
+  name: "Euido",
+  age: 13,
+  password: hireme
+};
+
+const rename = ({NAME:name, ...rest}) => ({name, ...rest})
+
+console.log(rename(user));
+```
+
