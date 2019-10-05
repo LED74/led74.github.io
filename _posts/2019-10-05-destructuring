@@ -1,0 +1,159 @@
+---
+layout: post
+title: "Destructuring"
+subtitle: "Destructuring"
+categories: Programming
+tags: Javascript
+---
+# **Javascript ES6,ES7,ES8** <br>
+
+**Object Destructuring**<br>
+
+```javascript
+const settings = {
+  notifications: {
+    follow: true,
+    alerts: true,
+    unfollow: false
+  },
+  color: {
+    theme: "dark"
+  }
+}
+
+//Before.....
+if(settings.notifications.follow){
+  //send email
+}
+
+//After.... using Object Destructuring
+const {
+  notifications: {follow = false} = {},
+  color
+} = settings;
+//then you can access follow, color directly from setting Object.
+//and as you can see you can set default value of
+//the variable follow, object notifications as above.
+
+console.log(follow);
+```
+
+**Array Destructuring**<br>
+
+```javascript
+const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+//Before....
+const mon = days[0];
+const tue = days[1];
+const wed = days[2];
+
+//After....
+const [mon, tue, wed] = days;
+
+console.log(mon, tue, wed);
+
+```
+
+**Renaming**<br>
+
+```javascript
+const settings {
+  color: {
+    chosen_color: "dark"
+  }
+};
+
+//before
+const {
+  color: { chosen_color = "light"}
+} = settings;
+const chosenColor = settings.color.chosen_color || "light";
+
+//after
+const {
+  color: { chosen_color : chosenColor = "light"}
+} = settings; 
+
+console.log(chosenColor);
+```
+
+**Function Destructuring**<br>
+
+```javascript
+function saveSettings(followAlert, unfollowAlert, markAler, themeColor){
+  
+}
+// it's too long so... we gonna make one object and put all arguments into the object.
+
+function saveSettings(settings){
+  console .log(settings);
+}
+
+saveSettings({
+  follow: true,
+  alert: true,
+  mkt: true,
+  color: "green"
+});
+
+// but we still can have possibility to make this code better
+function saveSettings({follow,alert, color = "blue"}){
+  console .log(settings);
+}
+
+saveSettings({
+  follow: true,
+  alert: true,
+  mkt: true,
+  color: "green"
+});
+```
+
+**Value Shorthands(Shorthand property)**<br>
+
+```javascript
+const follow = checkFollow();
+const alert = checkAlert();
+
+const settings = {
+  notifications: {
+    follow: follow,
+    alert: alert
+  }
+}
+// but you don't need to mention that follow means "const follow" in javascript 
+// you can simply do it like..
+
+const settings = {
+  notifications: {
+    follow
+    alert
+  }
+}
+```
+
+**Swapping and Skipping**<br>
+
+1.swap<br>
+```javascript
+let mon = "Sat";
+let sat = "Mon";
+
+//when you want to swap the value between mon and sat
+//you can do it like
+[sat, mon] = [mon, sat]
+//then they make an array and swap it and open an array using Destructuring 
+//and update
+```
+
+2.skip<br>
+```javascript
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+const [,,, thu, fri] = days;
+
+console.log(thu, fri);
+
+//result:thu fri
+```
