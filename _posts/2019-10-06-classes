@@ -1,0 +1,66 @@
+---
+layout: post
+title: "Classes"
+subtitle: "Classes"
+categories: Programming
+tags: Javascript
+---
+
+# **Javascript ES6,ES7,ES8** <br>
+
+**Class**<br>
+
+Basic code of Class
+```javascript
+class User {
+  constructure({username, lastName, email, password}){
+    this.username = name;
+    this.lastName = lastName;
+    this.email = email;
+    this.password = password;
+  }
+  sayHello(){
+    console.log(`Hello, my name is ${this.username}`);
+  }
+  getProfile(){
+    console.log(`${this.username} ${this.email} ${this.password}`);
+  }
+  updatePassword(newPassword, currentPassword){
+    if(currentPassword === this.password){
+      this.password = newPassword;
+    } else {
+      console.log("Can't change password.");
+    }
+  }
+}
+
+const Person1 = new User({
+  username: "Euido", 
+  lastName: "LEE", 
+  email: "leeeuido@gmail.com", 
+  password: "1234"});
+
+Person1.sayHello();
+```
+
+
+Extend class<br>
+```javascript
+class Admin extends User {
+  constructure({username, lastName, email, password, superAdmin}){
+    super({username, lastName, email, password});
+    this.superadmin = superAdmin;
+  }
+  deleteWebsite(){
+    console.log("Deleting the whole website...");
+  }
+}
+
+const admin = new Admin({
+  username: "Euido", 
+  lastName: "LEE", 
+  email: "leeeuido@gmail.com", 
+  password: "1234",
+  superAdmin: true  
+});
+```
