@@ -1,0 +1,61 @@
+---
+layout: post
+title: "Set and Map"
+subtitle: "Set and Map"
+categories: Programming
+tags: Javascript
+---
+
+# **Javascript ES6,ES7,ES8** <br>
+
+**Set**<br>
+
+```javascript
+const testSet = new Set([1,2,3,4,5,6,7,7,7,7,8]);
+
+// result : set will have ([1,2,3,4,5,6,7,8])
+// because they only save unique value
+```
+
+```javascript
+testSet.has(9);
+//has will check 9 is in the set or not
+
+testSet.delete(1);
+//delete will delete 1 from the set. it doesn't matter where 1 is
+
+testSet.clear()
+// clear will all value from the set
+
+testSet.add("Hi")
+// add will add the  value to the set
+```
+
+**WeakSet**<br>
+you can only save objects in WeakSet
+WeakSet only have few functions because they can only save Objects
+```javascript
+const weakSet = new WeakSet();
+
+weak.add(1);
+//result : error
+
+weak.add({hi:true});
+//result : WeakSet {{...}}  (saved)
+```
+
+**Map**
+Map have key-value. (Set have only value)
+```javascript
+const map = new Map();
+
+map.set("age", 18)
+result : Map(1) {"age" => 18}
+map.entries()
+result : MapIterator {"age" => 18}
+map.has("age")
+result : true
+map.get("age");
+result : 18
+ 
+```
