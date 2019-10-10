@@ -67,3 +67,75 @@ promiseTest
   .catch(error => console.log(error));
 //if promise return error using "reject", .catch will run 
 ```
+
+**Chaining Promises**
+```javascript
+const promiseTest = new Promise((resolve, reject) => {
+  resolve(2);
+});
+
+promiseTest
+.then(number => { number * 2;
+})
+.then(otherNumber => {
+  console.log(otherNumber * 2);
+})
+//we can add .then as much as you can.
+```
+
+**Promise.all**<br>
+Promise.all wait till all promise will be done.<br>
+one of promise is rejected, motherPromise also will be rejected.<br>
+
+```javascript
+const p1 = new Promise(resolve => {
+  setTimeout(resolve, 5000, "First");
+});
+
+const p2 = new Promise(resolve => {
+  setTimeout(resolve, 1000, "Second");
+});
+
+const p3 = new Promise(resolve => {
+  setTimeout(resolve, 3000, "Third");
+})
+
+const motherPromise = Promise.all([p1, p2, p3]);
+motherPromise.then(values => console.log(values));
+
+//result: (3)["First", "Second", "Third"]
+```
+**Promise.race**<br>
+Promise.race is similar with Promise.all<br>
+but Promise.race is okay if one of Promise is resolved or rejected.<br>
+fastest promise take motherPromise and will return.<br>
+```javascript
+const p1 = new Promise(resolve => {
+  setTimeout(resolve, 5000, "First");
+});
+
+const p2 = new Promise(resolve => {
+  setTimeout(resolve, 1000, "Second");
+});
+
+const p3 = new Promise(resolve => {
+  setTimeout(resolve, 3000, "Third");
+})
+
+const motherPromise = Promise.all([p1, p2, p3]);
+motherPromise
+  .then(values => console.log(values));
+  .catch(err => console.log(err));
+```
+
+
+**.finally**<br>
+Finally is running regardless of the result(resolved or rejected)
+```javascript
+const p1 = new Promise(resolve => {
+  setTimeout(resolve, 5000, "First");
+});
+  .then(value => console.log(value))
+  .catch(e => console.log(e))
+  .finally(() => console.log("I am done"));
+```
